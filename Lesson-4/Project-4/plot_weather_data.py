@@ -29,8 +29,6 @@ def plot_weather_data(turnstile_weather):
     of the actual data in the turnstile_weather dataframe
     '''
     #print turnstile_weather
-    #gg = ggplot(turnstile_weather, aes(x='DATEn', y='ENTRIESn_hourly'))+ geom_bar(aes(x='DATEn', weight = 'ENTRIESn_hourly', fill='blue'))
-    gg =  ggplot(turnstile_weather, aes(x = 'rain',y = 'ENTRIESn_hourly')) + geom_line(color='red') + geom_point(color = 'red')  + ggtitle('Rain vs ridership') + xlab('Year') + ylab('HR')
-
+    gg = ggplot(turnstile_weather, aes(x='Hour', y='ENTRIESn_hourly'))+  geom_point()
     return gg
    
