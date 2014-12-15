@@ -34,4 +34,9 @@ def predictions(weather_turnstile):
     # Your implementation goes here. Feel free to write additional
     # helper functions
     # 
+    Y = weather_turnstile['ENTRIESn_hourly']
+    X = weather_turnstile[['rain','fog','thunder','meanwindspdi','precipi','Hour','meantempi','meanpressurei','EXITSn_hourly']]
+    
+    results = sm.OLS(Y,X).fit()    
+    prediction = results.predict(X)
     return prediction
